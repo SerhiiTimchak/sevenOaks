@@ -1,0 +1,21 @@
+html,
+body {
+  margin: 0px; }
+
+.wrapper {
+  max-width: 1400px;
+  position: relative;
+  margin: 0 auto; }
+  .wrapper #slider {
+    width: 100%; }
+    .wrapper #slider .images {
+      position: relative; }
+      .wrapper #slider .images img {
+        width: 100%;
+        opacity: 0;
+        position: absolute;
+        transition: opacity 1s; }
+      .wrapper #slider .images img.active {
+        opacity: 1; }
+    .wrapper #slider .buttons {
+      text-align: center; }
