@@ -8,7 +8,9 @@ body {
     position: relative;
     margin: 0 auto;
     #slider {
+        z-index: 5;
         width: 100%;
+        position: relative;
         .images {
             img {
                 width: 100%;
@@ -26,9 +28,6 @@ body {
         width: 100%;
         z-index: 10;
         visibility: hidden;
-        // top: 213px;
-        // display: none;
-        // opacity: 0;
         #btn-left {
             position: absolute;
             background: #61615f;
@@ -40,6 +39,62 @@ body {
             background: #61615f;
             right: 0;
             padding: 27px 14px 25px 20px;
+        }
+    }
+}
+
+header {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    // border: solid black 1px;
+    .wrappWrapper {
+        background: #ffffff;
+        width: 100%;
+        z-index: 15;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu-button {
+        display: none;
+    }
+    .logo {
+        margin-top: 29px;
+        margin-left: 17px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline-block;
+    }
+    .search-menu-wrapper {
+        position: relative;
+        margin-right: -11px;
+        .searchLoop {
+            position: absolute;
+            display: inline;
+            right: 0;
+            z-index: 15;
+            margin-top: 9px;
+            margin-right: 22px;
+        }
+        .search-menu {
+            padding: 12px 112px 11px 14px;
+            background: #76b2c3;
+            opacity: 0.6;
+            font-size: 13px;
+            font-family: Helvetica, Arial, sans-serif;
+            color: #ffffff;
+        }
+        .search-menu li {
+            margin: 0 5px;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
         }
     }
 }

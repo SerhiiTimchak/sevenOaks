@@ -31,16 +31,11 @@ window.onload = function() {
     var caruselImgButton = document.querySelector("#btn-left");
     var caruselButtonsLine = document.querySelector(".buttons");
     var caruselImgStyle = window.getComputedStyle(caruselImgActive);
-    // var caruselButtonStyle = window.getComputedStyle(caruselImgButton);
     var caruselImgHeight = caruselImgStyle.getPropertyValue('height');
     var caruselButtonHeight = caruselImgButton.offsetHeight;
-    // console.log(caruselButtonHeight);
-
-    // console.log(typeof(+caruselImgHeight), typeof(+caruselButtonHeight));
 
 
     function calculateCenter(imgHeight, buttonHeight) {
-        // console.log(parseInt(caruselImgHeight), parseInt(caruselButtonHeight));
         let result = (parseInt(caruselImgHeight) - parseInt(caruselButtonHeight)) / 2;
         return result;
     };
@@ -50,7 +45,6 @@ window.onload = function() {
         buttonsLine.style.top = result + 'px';
     };
 
-    // console.log(calculateCenter(caruselImgHeight, caruselButtonHeight));
     setButtonsPosition(calculateCenter(caruselImgHeight, caruselButtonHeight), caruselButtonsLine);
 
     window.onresize = function() {
@@ -58,12 +52,8 @@ window.onload = function() {
         caruselImgButton = document.querySelector("#btn-left");
         caruselButtonsLine = document.querySelector(".buttons");
         caruselImgStyle = window.getComputedStyle(caruselImgActive);
-        // var caruselButtonStyle = window.getComputedStyle(caruselImgButton);
         caruselImgHeight = caruselImgStyle.getPropertyValue('height');
         caruselButtonHeight = caruselImgButton.offsetHeight;
-
-        console.log(calculateCenter(caruselImgHeight, caruselButtonHeight));
-
         setButtonsPosition(calculateCenter(caruselImgHeight, caruselButtonHeight), caruselButtonsLine);
 
     };

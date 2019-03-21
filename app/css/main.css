@@ -7,7 +7,9 @@ body {
   position: relative;
   margin: 0 auto; }
   .wrapper #slider {
-    width: 100%; }
+    z-index: 5;
+    width: 100%;
+    position: relative; }
     .wrapper #slider .images img {
       width: 100%;
       opacity: 0;
@@ -30,6 +32,50 @@ body {
       background: #61615f;
       right: 0;
       padding: 27px 14px 25px 20px; }
+
+header {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto; }
+  header .wrappWrapper {
+    background: #ffffff;
+    width: 100%;
+    z-index: 15;
+    position: absolute;
+    display: flex;
+    justify-content: space-between; }
+  header .menu-button {
+    display: none; }
+  header .logo {
+    margin-top: 29px;
+    margin-left: 17px; }
+  header ul {
+    margin: 0;
+    padding: 0; }
+  header nav ul li {
+    display: inline-block; }
+  header .search-menu-wrapper {
+    position: relative;
+    margin-right: -11px; }
+    header .search-menu-wrapper .searchLoop {
+      position: absolute;
+      display: inline;
+      right: 0;
+      z-index: 15;
+      margin-top: 9px;
+      margin-right: 22px; }
+    header .search-menu-wrapper .search-menu {
+      padding: 12px 112px 11px 14px;
+      background: #76b2c3;
+      opacity: 0.6;
+      font-size: 13px;
+      font-family: Helvetica, Arial, sans-serif;
+      color: #ffffff; }
+    header .search-menu-wrapper .search-menu li {
+      margin: 0 5px; }
+    header .search-menu-wrapper a {
+      text-decoration: none;
+      color: #ffffff; }
 
 @media screen and (max-width: 768px) {
   .wrapper .buttons #btn-left {
