@@ -10,7 +10,6 @@ body {
     #slider {
         width: 100%;
         .images {
-            position: relative;
             img {
                 width: 100%;
                 opacity: 0;
@@ -21,8 +20,35 @@ body {
                 opacity: 1;
             }
         }
-        .buttons {
-            text-align: center;
+    }
+    .buttons {
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+        visibility: hidden;
+        // top: 213px;
+        // display: none;
+        // opacity: 0;
+        #btn-left {
+            position: absolute;
+            background: #61615f;
+            opacity: 0.7;
+            padding: 27px 20px 25px 14px;
         }
+        #btn-right {
+            position: absolute;
+            background: #61615f;
+            right: 0;
+            padding: 27px 14px 25px 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper .buttons #btn-left {
+        padding: 14px 10px 12px 7px;
+    }
+    .wrapper .buttons #btn-right {
+        padding: 14px 7px 12px 10px;
     }
 }
