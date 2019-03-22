@@ -59,3 +59,17 @@ window.onload = function() {
     };
     //Buttons Height END
 };
+
+// Navigation menu slider START
+
+$(function() {
+    $('.menu-button').on('click', function() {
+        $('.navigation-menu-wrapper').slideToggle(300, function() {
+            if ($(this).css('display') === "none") {
+                $(this).removeAttr('style');
+            };
+        });
+    });
+});
+
+// Navigation menu slider END
