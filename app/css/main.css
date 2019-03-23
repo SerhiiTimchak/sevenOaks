@@ -4,6 +4,7 @@ body {
 
 .wrapper {
   max-width: 1400px;
+  min-height: 520px;
   position: relative;
   margin: 0 auto; }
   .wrapper #slider {
@@ -33,6 +34,23 @@ body {
       background: #61615f;
       right: 0;
       padding: 27px 14px 25px 20px; }
+  .wrapper .welcomeMessage {
+    opacity: 0.8;
+    position: absolute;
+    background: #4999af;
+    width: 459px;
+    box-sizing: border-box;
+    padding: 25px 23px 23px 19px;
+    left: 14.285%;
+    z-index: 10; }
+    .wrapper .welcomeMessage h1 {
+      margin: 0;
+      font-weight: 100;
+      font-size: 30px;
+      color: #ffffff;
+      font-family: sans-serif, Verdana, Geneva, Tahoma; }
+    .wrapper .welcomeMessage span {
+      font-weight: 700; }
 
 header {
   position: relative;
@@ -77,14 +95,14 @@ header {
         position: absolute;
         right: 0;
         z-index: 15;
-        background: #76b2c3;
+        background: #4999af;
         opacity: 0.6;
         width: 13px;
         height: 40px;
         transform: skewY(-20deg);
         top: 3px; }
       header .nav-pannels .search-menu-wrapper .search-menu {
-        background: #76b2c3;
+        background: #4999af;
         opacity: 0.6;
         padding: 9px 107px 9px 8px; }
         header .nav-pannels .search-menu-wrapper .search-menu li {
@@ -108,7 +126,7 @@ header {
         text-transform: uppercase;
         font-weight: 500; }
       header .nav-pannels .navigation-menu-wrapper .page-navigation .choused {
-        color: #76b2c3; }
+        color: #4999af; }
 
 @media screen and (max-width: 768px) {
   .wrapper .buttons #btn-left {
@@ -122,7 +140,11 @@ header {
   .wrapper header .blok-wrapper .nav-pannels .search-menu-wrapper {
     right: 0; }
   .wrapper header .blok-wrapper .nav-pannels .search-menu-wrapper .block-tip {
-    display: none; } }
+    display: none; }
+  .wrapper .welcomeMessage {
+    position: static;
+    width: 100%;
+    text-align: center; } }
 
 @media screen and (max-width: 768px) {
   .wrapper header .blok-wrapper {

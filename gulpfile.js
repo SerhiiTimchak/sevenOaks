@@ -1,7 +1,10 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
-    del = require('del');
+    del = require('del'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglifyjs');
+
 
 
 //Task for Saas
@@ -12,6 +15,13 @@ gulp.task('sass', function() {
         .pipe(browserSync.reload({ stream: true })); // refresh css on the page
 });
 
+//Task for zipping libs JS
+gulp.task('zipLibs', function() {
+    return gulp.src('app/libs/jquery/jquery.min.js')
+        .pipe(concat('libs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('app/js'));
+});
 
 //Task for JS
 gulp.task('script', function() {
@@ -59,5 +69,5 @@ gulp.task('watch', function() {
     gulp.watch(['app/js/common.js'], gulp.parallel('script'));
 });
 
-gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch'));
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'sass'));
+gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch', 'zipLibs'));
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'sass', 'zipLibs'));

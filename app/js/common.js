@@ -45,6 +45,17 @@ window.onload = function() {
         buttonsLine.style.top = result + 'px';
     };
 
+    // set up position welcomeMessage
+    var welcomeBlock = document.querySelector(".wrapper .welcomeMessage");
+
+    function positionWelcomeBlock(block, imageHeight) {
+        var result = parseInt(caruselImgHeight) * 0.6230769230769231;
+        console.log(result);
+        block.style.top = result + 'px';
+
+    }
+    positionWelcomeBlock(welcomeBlock, caruselImgHeight);
+
     setButtonsPosition(calculateCenter(caruselImgHeight, caruselButtonHeight), caruselButtonsLine);
 
     window.onresize = function() {
@@ -55,13 +66,13 @@ window.onload = function() {
         caruselImgHeight = caruselImgStyle.getPropertyValue('height');
         caruselButtonHeight = caruselImgButton.offsetHeight;
         setButtonsPosition(calculateCenter(caruselImgHeight, caruselButtonHeight), caruselButtonsLine);
+        positionWelcomeBlock(welcomeBlock, caruselImgHeight);
 
     };
     //Buttons Height END
 };
 
 // Navigation menu slider START
-
 $(function() {
     $('.menu-button').on('click', function() {
         $('.navigation-menu-wrapper').slideToggle(300, function() {
@@ -71,5 +82,8 @@ $(function() {
         });
     });
 });
-
 // Navigation menu slider END
+
+// Welcome block START
+
+//Welcome block END
