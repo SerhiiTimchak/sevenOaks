@@ -133,7 +133,7 @@ header {
       header .nav-pannels .navigation-menu-wrapper .page-navigation .choused {
         color: #4595ac; }
 
-.contentent-block {
+.content-block {
   width: 100%;
   margin: 29px auto 0;
   background: #f3eeea; }
@@ -229,6 +229,9 @@ header {
   padding-bottom: 15px;
   border-bottom: #61615f solid 1px; }
 
+.event-data:nth-last-child(1) {
+  border-bottom: none; }
+
 .event-data > div {
   float: left; }
 
@@ -285,29 +288,60 @@ header {
 .readMore {
   font-family: sans-serif, Verdana, Geneva, Tahoma;
   font-size: 14px;
-  font-weight: 500;
   color: #f1715e;
   font-weight: 600; }
 
-@media screen and (max-width: 768px) {
-  .wrapper .buttons #btn-left {
-    padding: 14px 10px 12px 7px; }
-  .wrapper .buttons #btn-right {
-    padding: 14px 7px 12px 10px; } }
+#bottom-lending {
+  background: #525252;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 32px; }
+
+.ssc-block {
+  float: left;
+  width: 33.33333%;
+  max-width: 333px; }
+
+.singUp div:nth-child(1) {
+  font-family: sans-serif, Verdana, Geneva, Tahoma;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.singUp #subscribeBtn {
+  font-family: sans-serif, Verdana, Geneva, Tahoma;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 274px;
+  background: #4595ac;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 5px;
+  margin-top: 27px; }
 
 @media screen and (max-width: 1024px) {
-  .wrapper header .blok-wrapper {
+  header .blok-wrapper {
     position: static; }
-  .wrapper header .blok-wrapper .nav-pannels .search-menu-wrapper {
-    right: 0; }
-  .wrapper header .blok-wrapper .nav-pannels .search-menu-wrapper .block-tip {
+  header .nav-pannels .search-menu-wrapper .block-tip {
     display: none; }
+  header .nav-pannels .search-menu-wrapper {
+    right: 0; }
   .wrapper .welcomeMessage {
     position: static;
     width: 100%;
-    text-align: center; } }
+    text-align: center; }
+  .events-post-wrapper {
+    margin: 33px -10px; }
+  .events-block,
+  .post-block {
+    margin: 0 10px; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1020px) {
   .wrapper header .blok-wrapper {
     position: static;
     display: block; }
@@ -345,4 +379,12 @@ header {
     float: none;
     margin: 0 auto;
     width: 100%;
-    max-width: 100%; } }
+    max-width: 100%; }
+  .event-data {
+    margin: 17px 10px 0; }
+  h3 {
+    padding: 0 10px; }
+  .post-block p {
+    padding: 0 10px; }
+  .readMore {
+    margin-left: 10px; } }
