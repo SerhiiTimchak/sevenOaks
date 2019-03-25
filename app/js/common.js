@@ -29,13 +29,6 @@ window.onload = function() {
 
     //Buttons Height START
 
-    // var caruselImgActive = document.querySelector(".active");
-    // var caruselImgButton = document.querySelector("#btn-left");
-    // var caruselButtonsLine = document.querySelector(".buttons");
-    // var caruselImgStyle = window.getComputedStyle(caruselImgActive);
-    // var caruselImgHeight = caruselImgStyle.getPropertyValue('height');
-    // var caruselButtonHeight = caruselImgButton.offsetHeight;
-
     var sliderBlock = document.querySelector("#slider");
     var caruselImgActive = document.querySelector(".active");
     var caruselImgButton = document.querySelector("#btn-left");
@@ -98,7 +91,23 @@ $(function() {
         });
     });
 });
-// Navigation menu slider END
+
+var subscribeBtn = document.querySelector('#subscribeBtn');
+var closeOverlayBtn = document.querySelector('.overlay .overlay-menu .closeBtn');
+var overlaySubscribeBtn = document.querySelector('#overlay-subscribeBtn');
+var overlay = document.querySelector('.overlay');
+
+subscribeBtn.onclick = function() {
+    overlay.style.height = 100 + '%';
+}
+
+closeOverlayBtn.onclick = function() {
+    overlay.style.height = 0 + '%';
+}
+overlaySubscribeBtn.onclick = function() {
+        overlay.style.height = 0 + '%';
+    }
+    // Navigation menu slider END
 
 // Welcome block START
 
