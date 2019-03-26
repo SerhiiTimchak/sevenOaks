@@ -3,7 +3,10 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     del = require('del'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglifyjs');
+    uglify = require('gulp-uglifyjs'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
+    cache = require('gulp-cache');
 
 
 
@@ -50,6 +53,18 @@ gulp.task('clean', async function() {
     return del.sync('dist');
 });
 
+
+gulp.task('img', function() {
+    return gulp.src("app/img/**/*")
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            use: [pngquant()],
+        })))
+        .pipe(gulp.dest('dist/img'));
+});
+
 // Buldig project for prodaction:
 gulp.task('prebuild', async function() {
     var buildCss = gulp.src(['app/css/main.css'])
@@ -58,8 +73,8 @@ gulp.task('prebuild', async function() {
         .pipe(gulp.dest('dist/js'));
     var buildHtml = gulp.src('app/*.html')
         .pipe(gulp.dest('dist'));
-    var img = gulp.src(['app/img/*'])
-        .pipe(gulp.dest('dist/img/'));
+    // var fonts = gulp.src(['app/css/fonts/**/*'])
+    //     .pipe(gulp.dest('dist/css/fonts'));
 });
 
 // Separate task for wathcing by files 
@@ -70,4 +85,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch', 'zipLibs'));
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'sass', 'zipLibs'));
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'sass', 'zipLibs', 'img'));
